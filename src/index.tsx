@@ -1,8 +1,9 @@
-import { render } from "react-dom";
-import App from "./App";
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import ThemeProvider from "./Theme/ThemeProvider";
+import React from 'react'
+import {render} from 'react-dom'
+import {BrowserRouter} from 'react-router-dom'
+
+import App from './App'
+import ThemeProvider from './Theme/ThemeProvider'
 
 render(
   <React.StrictMode>
@@ -12,5 +13,5 @@ render(
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
