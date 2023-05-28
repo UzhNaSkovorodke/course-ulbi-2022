@@ -12,6 +12,7 @@
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^@/pages/(.*)$",
+    "^@/app/(.*)$",
     "^@/components/(.*)$",
     "^@/entities/(.*)$",
     "^@/features/(.*)$",

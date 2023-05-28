@@ -1,27 +1,18 @@
 import {classNames} from 'helpers/ClassNames/classNames'
-import {AboutPage} from 'pages/AboutPage'
-import {MainPage} from 'pages/MainPage'
-import {Suspense} from 'react'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Navbar} from 'widgets/Navbar/ui/Navbar'
 
 import {useTheme} from './providers/ThemeProvider'
+import AppRouter from './providers/router/ui/AppRouter'
 
 import 'styles/index.scss'
 
 const App = () => {
-  const {theme, toogleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={toogleTheme}>TOGGLE THEME</button>
-      <Link to={'/'}>Главная</Link>
-      <Link to={'/about'}>О сайте</Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={'/about'} element={<AboutPage />} />
-          <Route path={'/'} element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <Navbar />
+      <AppRouter />
     </div>
   )
 }
