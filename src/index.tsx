@@ -1,9 +1,8 @@
-import {render} from 'react-dom'
+// eslint-disable-next-line react/no-deprecated
+import { render } from 'react-dom'
 import App from './app/App'
-import {BrowserRouter} from 'react-router-dom'
-import {ThemeProvider} from 'app/providers/ThemeProvider'
-
-import i18n from 'shared/config/i18n/i18n'
+import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from 'app/providers/ThemeProvider'
 
 render(
   <BrowserRouter>

@@ -8,23 +8,5 @@
   "quoteProps": "as-needed",
   "proseWrap": "always",
   "bracketSpacing": false,
-  "arrowParens": "avoid",
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^@/pages/(.*)$",
-    "^@/app/(.*)$",
-    "^@/components/(.*)$",
-    "^@/entities/(.*)$",
-    "^@/features/(.*)$",
-    "^@/helpers/(.*)$",
-    "^@/shared/(.*)$",
-    "^@/config/(.*)$",
-    "^@/store/(.*)$",
-    "^@/styles/(.*)$",
-    "^../(.*)",
-    "^./(.*)",
-    "(.scss)$"
-  ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "arrowParens": "avoid"
 }
