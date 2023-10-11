@@ -1,0 +1,30 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "printWidth": 140,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "proseWrap": "always",
+  "bracketSpacing": false,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/pages/(.*)$",
+    "^@/app/(.*)$",
+    "^@/components/(.*)$",
+    "^@/entities/(.*)$",
+    "^@/features/(.*)$",
+    "^@/helpers/(.*)$",
+    "^@/shared/(.*)$",
+    "^@/config/(.*)$",
+    "^@/store/(.*)$",
+    "^@/styles/(.*)$",
+    "^../(.*)",
+    "^./(.*)",
+    "(.scss)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
