@@ -3,7 +3,13 @@
   width: var(--sidebar-width);
   background: var(--inverted-bg-color);
   position: relative;
+  padding: 20px;
   transition: width 0.3s;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .collapsed {
@@ -11,9 +17,9 @@
 }
 
 .switchers {
-  position: absolute;
-  bottom: 20px;
   display: flex;
   justify-content: center;
-  width: 100%;
+
+  width: 80%;
+  margin-top: 20px;
 }
