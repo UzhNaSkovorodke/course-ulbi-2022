@@ -9,7 +9,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
 
   const onToggle = () => {
     setCollapsed((prev) => !prev)
@@ -21,6 +21,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <Button type={'submit'} onClick={onToggle} theme={ThemeButton.PRIMARY} width={'100%'}>
         Клик
       </Button>
+
       <div className={cls.switchers}>
         <ThemeSwitcher />
       </div>

@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+//TODO сделать allias для storybook
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],

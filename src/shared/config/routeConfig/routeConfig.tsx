@@ -3,6 +3,7 @@ import { MainPage } from 'pages/MainPage'
 import { AboutPage } from 'pages/AboutPage'
 import { NotFoundPage } from '@pages/NotFoundPage'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
@@ -16,6 +17,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.NOT_FOUND]: '*',
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,

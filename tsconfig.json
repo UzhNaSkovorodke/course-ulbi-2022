@@ -32,7 +32,8 @@
       "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"],
-      "@styles/*": ["shared/*"]
+      "@app/*": ["app/*"],
+      "@styles/*": ["app/styles/*"],
     }
   },
   "include": [

@@ -12,6 +12,10 @@
   background: var(--secondary-color);
   color: var(--primary-color);
 }
+.secondary {
+  background: var(--inverted-bg-color);
+  color: var(--secondary-color);
+}
 .inverted {
   background: none;
   background: var(--bg-color);

@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import s from './Input.module.css'
 import { classNames } from '@shared/lib/classNames/classNames.ts'
 

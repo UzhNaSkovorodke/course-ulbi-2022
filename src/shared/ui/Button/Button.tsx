@@ -2,9 +2,11 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export enum ThemeButton {
   CLEAR = 'clear',
   PRIMARY = 'primary',
+  SECONDARY = 'secondary',
   INVERTED = 'inverted',
 }
 
@@ -12,7 +14,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ThemeButton
   tabIndex?: number
-  bgColor?: string
   radius?: string
   height?: string
   width?: string
@@ -22,20 +23,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props) => {
-  const {
-    className,
-    children,
-    bgColor = 'primary',
-    radius = '5px',
-    width = 'auto',
-    height = '40px',
-    ...rest
-  } = props
+  const { className, children, radius = '5px', width = 'auto', height = '40px', ...rest } = props
 
   return (
     <button
       className={classNames(
-        [cls.button, cls[`button__color_${bgColor}`]],
+        [cls.button],
         { [cls[props.theme ?? '']]: true }, //TIPS: использовать enum или as const как тему для button
         [className ?? '']
       )}
