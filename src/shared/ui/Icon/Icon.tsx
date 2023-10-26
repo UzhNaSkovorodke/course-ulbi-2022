@@ -1,6 +1,7 @@
 import ThemeDark from './icons/theme-dark.svg?react'
 import ThemeLight from './icons/theme-light.svg?react'
 import ShowEye from './icons/eye.svg?react'
+import MenuHamburger from './icons/mune_hamburger.svg?react'
 interface IconProps {
   name?: IconName
   width?: string
@@ -25,4 +26,5 @@ export const ICON_TYPE_MAP = {
   ThemeDark: ThemeDark,
   ThemeLight: ThemeLight,
   ShowEye: ShowEye,
+  MenuHamburger: MenuHamburger,
 } as const

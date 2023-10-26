@@ -9,9 +9,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
-
+.top {
+  display: flex;
+  flex-direction: column;
+}
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
@@ -22,4 +25,8 @@
 
   width: 80%;
   margin-top: 20px;
+}
+
+.mainLink:not(:first-child) {
+  margin-top: 15px;
 }
