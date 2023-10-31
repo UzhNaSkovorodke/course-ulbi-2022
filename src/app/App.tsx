@@ -7,9 +7,10 @@ import AppRouter from './providers/router/ui/AppRouter.tsx'
 const App = () => {
   const { theme } = useTheme()
 
+  //TODO сделать loader при переходе на другую страницу
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
+    <div className={classNames('app', [theme])}>
+      <Suspense fallback="...">
         <AppRouter />
       </Suspense>
     </div>
