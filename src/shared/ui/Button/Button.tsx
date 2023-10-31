@@ -27,11 +27,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props) => {
 
   return (
     <button
-      className={classNames(
-        [cls.button],
-        { [cls[props.theme ?? '']]: true }, //TIPS: использовать enum или as const как тему для button
-        [className ?? '']
-      )}
+      className={classNames([cls.button], [className ?? '', cls[props.theme ?? '']])}
       tabIndex={props.tabIndex}
       style={{
         height: height,

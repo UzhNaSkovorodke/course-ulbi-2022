@@ -16,8 +16,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev)
   }
   return (
-    <nav
-      className={classNames([cls.Sidebar, collapsed ? cls.collapsed : ''], {}, [className ?? ''])}>
+    <nav className={classNames([cls.Sidebar, collapsed ? cls.collapsed : ''], [className ?? ''])}>
       {/* TIPS: вот так как выше можно по условию выбрать тему*/}
 
       <div className={cls.top}>

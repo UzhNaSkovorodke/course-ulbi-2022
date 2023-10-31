@@ -31,7 +31,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className={s.input_wrapper}>
         <input
           autoComplete="on"
-          className={classNames([s.input, s[`input__${classNameStatus}`]], {}, [className ?? ''])}
+          className={classNames([s.input, s[`input__${classNameStatus}`]], [className ?? ''])}
           style={{
             height: height,
             borderRadius: radius,
