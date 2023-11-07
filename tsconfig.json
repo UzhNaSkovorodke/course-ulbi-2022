@@ -33,6 +33,7 @@
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"],
       "@app/*": ["app/*"],
+      "@entities/*": ["entities/*"],
       "@styles/*": ["app/styles/*"],
     }
   },
