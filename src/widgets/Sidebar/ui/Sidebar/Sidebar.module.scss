@@ -5,16 +5,17 @@
   position: relative;
   padding: 20px;
   transition: width 0.3s;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .top {
   display: flex;
   flex-direction: column;
 }
+
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
@@ -22,7 +23,6 @@
 .switchers {
   display: flex;
   justify-content: center;
-
   width: 80%;
   margin-top: 20px;
 }
