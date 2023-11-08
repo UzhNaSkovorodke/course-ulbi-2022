@@ -9,7 +9,7 @@ const App = () => {
 
   //TODO сделать loader при переходе на другую страницу
   return (
-    <div className={classNames('app', [theme])}>
+    <div className={classNames('app', [theme])} id={'app'}>
       <Suspense fallback="...">
         <AppRouter />
       </Suspense>

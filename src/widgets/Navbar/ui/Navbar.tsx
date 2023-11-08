@@ -4,6 +4,7 @@ import { AppLink, AppLinkTheme } from '@shared/ui/AppLink/AppLink.tsx'
 import { Button, ThemeButton } from '@shared/ui/Button/Button.tsx'
 import { Modal } from '@shared/ui/Modal/Modal.tsx'
 import { useState } from 'react'
+import { LoginForm } from '../../../features/LoginForm'
 
 interface NavbarProps {
   className?: string
@@ -26,7 +27,7 @@ export const Navbar = ({ className }: NavbarProps) => {
       </nav>
       {isOpenAuth && (
         <Modal isOpen={isOpenAuth} onClose={() => setIsOpenAuth(false)}>
-          Авторизация
+          <LoginForm />
         </Modal>
       )}
     </div>
