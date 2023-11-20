@@ -18,7 +18,7 @@ export const LoginForm = () => {
   return (
     <section className={s.form}>
       <div className={s.form_header}>
-        <h1>DOGGEE</h1>
+        <h1>Auth</h1>
       </div>
 
       <div>
