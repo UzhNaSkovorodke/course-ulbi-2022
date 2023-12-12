@@ -5,6 +5,8 @@ import { Button, ThemeButton } from '@shared/ui/Button/Button.tsx'
 import { Modal } from '@shared/ui/Modal/Modal.tsx'
 import { useState } from 'react'
 import { LoginForm } from '../../../features/LoginForm'
+import { RegistryForm } from '../../../features/RegistryForm'
+import { Alarm } from '../../../features/Alarm'
 
 interface NavbarProps {
   className?: string
@@ -12,6 +14,9 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const [isOpenAuth, setIsOpenAuth] = useState<boolean>(false)
+  const [isOpenRegistry, setIsOpenRegistry] = useState<boolean>(false)
+  const [isOpenAlarm, setIsOpenAlarm] = useState<boolean>(false)
+
   const authHandler = () => {
     setIsOpenAuth(true)
   }
@@ -25,11 +30,24 @@ export const Navbar = ({ className }: NavbarProps) => {
           </Button>
         </AppLink>
       </nav>
-      {isOpenAuth && (
-        <Modal isOpen={isOpenAuth} onClose={() => setIsOpenAuth(false)}>
-          <LoginForm />
-        </Modal>
-      )}
+      <Modal isOpen={isOpenAuth} onClose={() => setIsOpenAuth(false)}>
+        <LoginForm
+          setIsOpenRegistry={setIsOpenRegistry}
+          setIsOpenAuth={setIsOpenAuth}
+          setIsOpenAlarm={setIsOpenAlarm}
+        />
+      </Modal>
+      <Modal isOpen={isOpenRegistry} onClose={() => setIsOpenRegistry(false)}>
+        <RegistryForm
+          setIsOpenRegistry={setIsOpenRegistry}
+          setIsOpenAuth={setIsOpenAuth}
+          setIsOpenAlarm={setIsOpenAlarm}
+        />
+      </Modal>
+
+      <Modal isOpen={isOpenAlarm} onClose={() => setIsOpenAlarm(false)}>
+        <Alarm textError={'Не удалось зайти или зарегистрироваться'} />
+      </Modal>
     </div>
   )
 }

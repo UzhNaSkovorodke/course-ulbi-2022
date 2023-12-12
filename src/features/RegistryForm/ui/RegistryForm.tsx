@@ -2,7 +2,7 @@ import { Input } from '@shared/ui/Input/Input.tsx'
 import { InputPassword } from '@shared/ui/InputPassword/InputPassword.tsx'
 import { Button } from '@shared/ui/Button/Button.tsx'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import s from './LoginPage.module.scss'
+import s from './Registry.module.scss'
 import axios, { AxiosRequestConfig } from 'axios'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -12,7 +12,7 @@ type DataType = {
   username: string
 }
 
-export const LoginForm = ({
+export const RegistryForm = ({
   setIsOpenRegistry,
   setIsOpenAuth,
   setIsOpenAlarm,
@@ -24,8 +24,8 @@ export const LoginForm = ({
   const {
     register,
     handleSubmit,
-    setValue,
     clearErrors,
+    setValue,
     formState: { errors },
   } = useForm<DataType>()
 
@@ -37,8 +37,10 @@ export const LoginForm = ({
     }
 
     const axiosRequestData: loginRequestConfig = data
+
     try {
-      const resp = await axios.post('http://localhost:4998/login', axiosRequestData)
+      const resp = await axios.post('http://localhost:4998/users', axiosRequestData)
+
       if (resp.status === 200) {
         clearErrors()
         setValue('username', '')
@@ -49,19 +51,18 @@ export const LoginForm = ({
       setIsOpenAlarm(true)
       console.log(e)
     } finally {
-      setIsOpenAuth(false)
+      setIsOpenRegistry(false)
     }
   }
   const onBottomBtnClickHandler = () => {
     clearErrors()
-    setIsOpenAuth(false)
-    setIsOpenRegistry(true)
+    setIsOpenRegistry(false)
+    setIsOpenAuth(true)
   }
-
   return (
     <section className={s.form}>
       <div className={s.form_header}>
-        <h1>Auth</h1>
+        <h1>Registry</h1>
       </div>
 
       <div>
@@ -99,7 +100,7 @@ export const LoginForm = ({
         </form>
 
         <div className={s.form_footer}>
-          <Button onClick={onBottomBtnClickHandler}>Create new account</Button>
+          <Button onClick={onBottomBtnClickHandler}>Login</Button>
         </div>
       </div>
     </section>
