@@ -24,7 +24,7 @@ export const LoginForm = ({
   const {
     register,
     handleSubmit,
-    setValue,
+    //setValue,
     clearErrors,
     formState: { errors },
   } = useForm<DataType>()
@@ -40,14 +40,15 @@ export const LoginForm = ({
     try {
       const resp = await axios.post('http://localhost:4998/login', axiosRequestData)
       if (resp.status === 200) {
+        // Возможно, вам нужно выполнить какие-то дополнительные действия с токеном
+        document.cookie = `refresh=${resp.data.refresh}; path=/;`
         clearErrors()
-        setValue('username', '')
-        setValue('password', '')
-        setValue('email', '')
+        // setValue('username', '')
+        // setValue('password', '')
+        // setValue('email', '')
       }
     } catch (e) {
       setIsOpenAlarm(true)
-      console.log(e)
     } finally {
       setIsOpenAuth(false)
     }

@@ -22,11 +22,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { className, children, radius = '5px', width = 'auto', height = '40px', ...rest } = props
 
   return (
     <button
+      ref={ref}
       className={classNames([cls.button], [className ?? '', cls[props.theme ?? '']])}
       tabIndex={props.tabIndex}
       style={{

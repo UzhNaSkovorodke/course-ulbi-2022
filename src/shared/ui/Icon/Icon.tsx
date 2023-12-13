@@ -16,7 +16,7 @@ export const Icon = ({ name, width, height, ...rest }: IconProps) => {
   }
   const Component = ICON_TYPE_MAP[name]
 
-  return <Component width={width ?? ''} height={height ?? ''} {...rest} />
+  return <Component width={width ?? '1'} height={height ?? '1'} {...rest} />
 }
 
 export type IconName = keyof typeof ICON_TYPE_MAP
