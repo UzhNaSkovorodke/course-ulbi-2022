@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import s from './LoginPage.module.scss'
 import axios, { AxiosRequestConfig } from 'axios'
 import { Dispatch, SetStateAction } from 'react'
+import { getDay } from '@shared/lib/getDate/getDate.ts'
 
 type DataType = {
   email: string
@@ -40,8 +41,10 @@ export const LoginForm = ({
     try {
       const resp = await axios.post('http://localhost:4998/login', axiosRequestData)
       if (resp.status === 200) {
-        // Возможно, вам нужно выполнить какие-то дополнительные действия с токеном
-        document.cookie = `refresh=${resp.data.refresh}; path=/;`
+        //localStorage.setItem('userid', `${resp.headers[]}`);
+        const { email, username, userid, tokens } = JSON.parse(resp.headers.user_dto)
+
+        document.cookie = `refresh=${tokens.refreshToken}; path=/; expires=" + ${getDay()};`
         clearErrors()
         // setValue('username', '')
         // setValue('password', '')

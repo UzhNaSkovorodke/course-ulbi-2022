@@ -7,6 +7,8 @@ import { useState } from 'react'
 import { LoginForm } from '../../../features/LoginForm'
 import { RegistryForm } from '../../../features/RegistryForm'
 import { Alarm } from '../../../features/Alarm'
+import getCookieValue from '@shared/lib/getCookie/getCookie.ts'
+import { getAccessToken } from '@entities/Auth/authService.ts'
 
 interface NavbarProps {
   className?: string
@@ -17,8 +19,12 @@ export const Navbar = ({ className }: NavbarProps) => {
   const [isOpenRegistry, setIsOpenRegistry] = useState<boolean>(false)
   const [isOpenAlarm, setIsOpenAlarm] = useState<boolean>(false)
 
-  const authHandler = () => {
-    setIsOpenAuth(true)
+  const authHandler = async () => {
+    const refreshToken = getCookieValue('refresh')
+    const accessToken = await getAccessToken(2, refreshToken)
+    if (refreshToken) {
+      console.log(accessToken)
+    } else setIsOpenAuth(true)
   }
 
   return (

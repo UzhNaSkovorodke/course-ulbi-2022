@@ -33,6 +33,7 @@ export const Modal = (props: ModalProps) => {
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
+
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown)
@@ -48,8 +49,8 @@ export const Modal = (props: ModalProps) => {
       <div
         className={classNames(cls.Modal, [className ?? '', isOpen ? cls.opened : '', cls[theme]])}>
         <div className={cls.overlay} onClick={closeHandler} />
-        <div className={cls.content} onClick={closeHandler}>
-          <div onClick={onContentClick}>{children}</div>
+        <div className={cls.content} onClick={onContentClick}>
+          {children}
         </div>
       </div>
     </Portal>

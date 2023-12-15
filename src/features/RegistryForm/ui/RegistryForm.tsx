@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import s from './Registry.module.scss'
 import axios, { AxiosRequestConfig } from 'axios'
 import { Dispatch, SetStateAction } from 'react'
+import { getDay, getMinute } from '@shared/lib/getDate/getDate.ts'
 
 type DataType = {
   email: string
@@ -46,10 +47,15 @@ export const RegistryForm = ({
         setValue('username', '')
         setValue('password', '')
         setValue('email', '')
+        document.cookie = `refresh=${
+          resp.headers['refresh_token']
+        }; path=/; expires=" + ${getDay()};`
+        document.cookie = `access=${resp.headers['access_token']}; path=/; expires=" + ${getMinute(
+          15
+        )};`
       }
     } catch (e) {
       setIsOpenAlarm(true)
-      console.log(e)
     } finally {
       setIsOpenRegistry(false)
     }

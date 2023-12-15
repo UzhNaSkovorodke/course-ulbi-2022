@@ -2,6 +2,11 @@
   position: fixed;
   inset: 0;
   opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
   color: black;
 }
@@ -10,7 +15,6 @@
   width: 100vw;
   height: 100vh;
   background: var(--overlay-color);
-  opacity: 0.5;
   position: absolute;
   display: flex;
   align-items: center;
@@ -19,9 +23,8 @@
 
 .content {
   opacity: 1;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+  width: max-content;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
